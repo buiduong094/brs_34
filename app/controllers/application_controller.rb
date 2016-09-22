@@ -12,4 +12,9 @@ class ApplicationController < ActionController::Base
         :password_confirmation, :avatar
     end
   end
+
+  include CanCan::ControllerAdditions
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, alert: exception.message
+  end
 end
