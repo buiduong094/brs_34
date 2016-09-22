@@ -23,6 +23,24 @@ class Admin::CategoriesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @category.update_attributes category_params
+      flash[:success] = t "admin.categories.category_updated"
+      redirect_to admin_categories_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @category.destroy
+    flash[:success] = t "admin.categories.delete"
+    redirect_to admin_categories_path
+  end
+
   private
   def category_params
     params.require(:category).permit :name
