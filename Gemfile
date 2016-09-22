@@ -7,6 +7,10 @@ gem "devise"
 gem "carrierwave"
 gem "mini_magick"
 gem "bootstrap-sass", "3.2.0.0"
+gem "kaminari"
+gem "ransack"
+gem "config"
+gem "cancancan"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3"
 # Use SCSS for stylesheets
