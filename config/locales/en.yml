@@ -76,8 +76,6 @@ en:
       forgot_your_password: "Forgot your password"
   admin:
     categories:
-        admin:
-    categories:
       success: "Create Category Success!"
       fail: "Cannot Create Category!"
       add: "Add Category"
@@ -95,6 +93,8 @@ en:
       sure: "Are you sure?"
       remove: "Delete"
       please_login: "Please Login"
+      add_more_category: "Add more Category"
+      search_placeholer: "Search Category"
   search: "Search"
   shared:
     error: "error"
