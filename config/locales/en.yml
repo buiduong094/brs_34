@@ -74,3 +74,28 @@ en:
       login: "Log in"
       sign_up: "Sign up"
       forgot_your_password: "Forgot your password"
+  admin:
+    categories:
+        admin:
+    categories:
+      success: "Create Category Success!"
+      fail: "Cannot Create Category!"
+      add: "Add Category"
+      create: "Create new category"
+      all: "All Category"
+      category_name: "Category Name"
+      books: "Number of Books"
+      add_more_category: "Add more Category"
+      search_placeholer: "Search Category"
+      category_updated: "Category Updated"
+      delete: "Category Deleted"
+      edit_category: "Edit Category"
+      save: "Save Changes"
+      edit: "Edit"
+      sure: "Are you sure?"
+      remove: "Delete"
+      please_login: "Please Login"
+  search: "Search"
+  shared:
+    error: "error"
+    the_form_contain: "The form contains"
