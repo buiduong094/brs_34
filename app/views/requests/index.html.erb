@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <%= link_to t("requests.table.add_request"), new_request_path,
+    class: "btn btn-md btn-primary pull-right" %>
+  <h1><%= t "requests.all_my_request" %></h1>
+  <div class="search-form">
+    <%= search_form_for @q do |f| %>
+      <div class="field">
+        <%= f.text_field :book_name_cont, class: "form-control",
+          placeholder: t("requests.search_placeholer") %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t "requests.table.index" %></th>
+          <th><%= t "requests.table.content" %></th>
+          <th><%= t "requests.table.create_at" %></th>
+          <th><%= t "requests.table.status" %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="requests-body">
+        <%= render "request" %>
+      </tbody>
+    </table>
+    <%= paginate @requests %>
+    <%= page_entries_info @requests %>
+  </div>
+</div>

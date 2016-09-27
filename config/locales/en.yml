@@ -42,9 +42,27 @@ en:
       introduce: "This is the home page"
       linkto_framgia_title: "Framgia Vietnam"
       linkto_framgia_adress: "http://recruit.framgia.vn/"
-    shared:
-     error: "error"
-     the_form_contain: "The form contains"
+      sent: "Sent"
+  requests:
+    all_my_request: "All Requests"
+    search_placeholer: "Search requests"
+    table:
+      content: "Content"
+      id: "ID"
+      index: "Index"
+      show: "Show"
+      delete: "Delete"
+      create_at: "Create at"
+      status: "Status"
+      add_request: "Add new a request"
+      confirm: "Delete this requests"
+    new:
+      sent: "Sent my request"
+      sent: "Sent"
+      title: "New your request"
+      content: "Input content your request"
+    show:
+      title: "Content your request"
   devise:
     registrations:
       new:
@@ -76,8 +94,6 @@ en:
       forgot_your_password: "Forgot your password"
   admin:
     categories:
-        admin:
-    categories:
       success: "Create Category Success!"
       fail: "Cannot Create Category!"
       add: "Add Category"
@@ -95,7 +111,14 @@ en:
       sure: "Are you sure?"
       remove: "Delete"
       please_login: "Please Login"
+      add_more_category: "Add more Category"
+      search_placeholer: "Search Category"
   search: "Search"
   shared:
     error: "error"
     the_form_contain: "The form contains"
+  flash:
+    user_requests:
+      create_success: "create request success"
+      destroy_success: "Delete request success"
+      destroy_fail: "Delete request fail"
