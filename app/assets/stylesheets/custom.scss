@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "social-share-button";
 
 /* mixins, variables, etc. */
 
@@ -94,4 +95,8 @@ footer {
       margin-left: 15px;
     }
   }
+}
+
+.page {
+  clear: both;
 }

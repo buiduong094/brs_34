@@ -11,6 +11,7 @@ gem "kaminari"
 gem "ransack"
 gem "config"
 gem "cancancan"
+gem "social-share-button"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3"
 # Use SCSS for stylesheets
