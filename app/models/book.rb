@@ -5,6 +5,8 @@ class Book < ActiveRecord::Base
 
   mount_uploader :image, AvatarUploader
 
+  ratyrate_rateable "rate"
+
   validates :title, presence: true
   validate :publish_date_validate
   validates :author, presence: true

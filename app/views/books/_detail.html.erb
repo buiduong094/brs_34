@@ -34,6 +34,10 @@
         </tr>
       <% end %>
       <tr><td></td><td><%= social_share_button_tag @book.title %></td></tr>
+      Quality :
+      <div data-dimension="rate" class="star" data-rating="0" data-id="6" data-classname="Book" data-disable-after-rate="true" data-readonly="false" data-enable-half="false" data-half-show="true" data-star-count="5" data-star-path="/assets" data-star-on="star-on.png" data-star-off="star-off.png" data-star-half="star-half.png" data-cancel="false" data-cancel-place="left" data-cancel-hint="Cancel current rating!" data-cancel-on="cancel-on.png" data-cancel-off="cancel-off.png" data-no-rated-message="I'am readOnly and I haven't rated yet!" data-space="false" data-single="false" data-target="" data-target-text="" data-target-type="hint" data-target-format="{score}" data-target-score="" style="cursor: pointer;">
+        <img title="Cancel current rating!" class="raty-cancel" src="/assets/cancel-off.png" alt="x">&nbsp;<img alt="1" src="/assets/star-on.png" title="bad">&nbsp;<img alt="2" src="/assets/star-on.png" title="poor">&nbsp;<img alt="3" src="/assets/star-off.png" title="regular">&nbsp;<img alt="4" src="/assets/star-off.png" title="good">&nbsp;<img alt="5" src="/assets/star-off.png" title="gorgeous"><input name="score" value="2" type="hidden"></div>
+      <%#= @book.average("rate").avg %>
     </table>
   </div>
 </div>
