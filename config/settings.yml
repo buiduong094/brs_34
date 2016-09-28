@@ -9,3 +9,6 @@ admin:
     pic_size: 5
     round_rate_average: 2
     image_size: 5000000
+books:
+  size: "200x200"
+  size_details: "300x300"

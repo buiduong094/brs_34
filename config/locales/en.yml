@@ -114,16 +114,6 @@ en:
       sure: "Are you sure?"
       remove: "Delete"
       please_login: "Please Login"
-      add_more_category: "Add more Category"
-      search_placeholer: "Search Category"
-      category_updated: "Category Updated"
-      delete: "Category Deleted"
-      edit_category: "Edit Category"
-      save: "Save Changes"
-      edit: "Edit"
-      sure: "Are you sure?"
-      remove: "Delete"
-      please_login: "Please Login"
     books:
       table:
         id: "ID"
@@ -136,6 +126,7 @@ en:
         number_page: "Number page"
         rate_avg: "Rate average"
         publish_date: "Publish date"
+      search_placeholer: "Search title in books"
       new:
         create_book: "Create a new book."
       index:
@@ -156,6 +147,9 @@ en:
     formats:
       default: "%a, %d %b %Y %H:%M:%S"
       publish_date: "%d %b %Y"
+  books:
+    title: "Books"
+    all: "All books"
   models:
     book:
       validate_picture: "Should be less than 5MB."
@@ -171,3 +165,18 @@ en:
         updated_error: "Book has not been updated."
         destroy_success: "Book has been delete."
         destroy_error: "Book has not been delete."
+  social_share_button:
+    share_to: Share to %{name}
+    weibo: Sina Weibo
+    twitter: Twitter
+    facebook: Facebook
+    douban: Douban
+    qq: Qzone
+    delicious: Delicious
+    google_plus: Google+
+    google_bookmark: Google Bookmark
+    tumblr: Tumblr
+    pinterest: Pinterest
+    email: Email
+    linkedin: Linkedin
+    weichat: Weichat
