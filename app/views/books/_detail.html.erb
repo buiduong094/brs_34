@@ -25,15 +25,31 @@
         <th><%= t "books.number_page" %></th>
         <th><%= @book.number_of_page %></th>
       </tr>
-      <% if rate_average = @book.rate_average %>
-        <tr class="star">
-          <th><%= t "books.star" %></th>
-          <th>
-            <%= rate_average.round Settings.admin.books.round_rate_average %>
-          </th>
-        </tr>
-      <% end %>
+      <% rate_average = @book.rate_average %>
+      <tr class="star_rewview_book <%= t "hidden" if rate_average.nil? %>">
+        <th><%= t "books.star" %></th>
+        <th>
+          <strong id="star_rewview_book" class="stat">
+            <% if rate_average.present? %>
+              <%= rate_average.round Settings.admin.books.round_rate_average %>
+            <% end %>
+          </strong>
+          <%= image_tag Settings.star_on,
+            size: Settings.books.size_star_details %>
+        </th>
+      </tr>
       <tr><td></td><td><%= social_share_button_tag @book.title %></td></tr>
+      <tr>
+        <td></td>
+        <td>
+          <div class="col-md-12" id="button_create">
+            <button type="button" class="btn btn-primary mynewreview pull-right "
+              data-toggle="modal" data-target="#mynewreview"
+              data-whatever="@fat"><%= @button %></button>
+          </div>
+        </td>
+      </tr>
     </table>
   </div>
 </div>
+<%= render "form_review" %>
