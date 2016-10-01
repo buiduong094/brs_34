@@ -12,6 +12,9 @@ admin:
     avartar_size: "50x50"
 users:
   avatar_nil: "/assets/avartar_nil.jpeg"
+  size: "50x50"
+  size_ava: "130x130"
+  size_book: "100x100"
 books:
   size: "200x200"
   size_details: "300x300"
@@ -20,6 +23,7 @@ books:
     reading: 0
     read: 1
     favorite: true
+  per_page: 4
 reivews: ["bad", "poor", "regular", "good", "gorgeous"]
 star_on: "/assets/star-on.png"
 star_off: "/assets/star-off.png"

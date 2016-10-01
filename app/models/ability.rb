@@ -11,6 +11,7 @@ class Ability
       can [:create, :update, :destroy], Review, user_id: user.id
       can [:create, :destroy], Comment, user_id: user.id
       can [:create, :update, :destroy], BookStatus, user_id: user.id
+      can [:edit, :update], User
     end
   end
 end

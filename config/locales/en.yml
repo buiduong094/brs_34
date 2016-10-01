@@ -121,6 +121,16 @@ en:
       sure: "Are you sure?"
       remove: "Delete"
       please_login: "Please Login"
+    users:
+      search_placeholer: "Search User"
+      delete_confirm: "You sure?"
+      destroy_success: "User has been destroy"
+      destroy_error: "User has not been destroy"
+      td_index: "Index"
+      td_Avatar: "Avatar"
+      td_name: "Name"
+      td_email: "Email"
+      td_delete: "Delete"
     books:
       table:
         id: "ID"
@@ -177,6 +187,7 @@ en:
     reading: "reading"
     read: "read"
     favourites: "Favourites"
+    book_readings: "Book Readings"
   models:
     book:
       validate_picture: "Should be less than 5MB."
