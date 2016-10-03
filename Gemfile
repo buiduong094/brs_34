@@ -14,6 +14,7 @@ gem "cancancan"
 gem "social-share-button"
 gem "simple_form"
 gem "whenever", require: false
+gem "sidekiq"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3"
 # Use SCSS for stylesheets

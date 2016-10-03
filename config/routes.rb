@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  require "sidekiq/web"
+
+  mount Sidekiq::Web, at: "/sidekiq"
+
   root "static_pages#home"
   get "static_pages/help"
   get "static_pages/about"
@@ -51,6 +56,7 @@ Rails.application.routes.draw do
     root "categories#index"
     resources :categories
     resources :books
+    resources :requests
   end
 
   resources :books
