@@ -9,6 +9,9 @@ admin:
     pic_size: 5
     round_rate_average: 2
     image_size: 5000000
+    avartar_size: "50x50"
+users:
+  avatar_nil: "/assets/avartar_nil.jpeg"
 books:
   size: "200x200"
   size_details: "300x300"

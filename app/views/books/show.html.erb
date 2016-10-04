@@ -8,16 +8,14 @@
     <hr>
   </div>
   <%= render "detail" %>
-  <div class="col-md-1"></div>
-    <div class="col-md-7">
-      <h2><%= t "reviews.user_review" %></h2>
-      <div class="reviews-index">
-        <% @reviews.each do |review| %>
-          <%= render partial: "reviews/review", object: review %>
-        <% end %>
-      </div>
-      <%= paginate @reviews %>
-      <%= page_entries_info @reviews %>
+  <div class="col-md-12">
+    <h2><%= t "reviews.user_review" %></h2>
+    <div class="reviews-index">
+      <% @reviews.each do |review| %>
+        <%= render partial: "reviews/review", object: review %>
+      <% end %>
     </div>
+    <%= paginate @reviews %>
+    <%= page_entries_info @reviews %>
   </div>
 </div>

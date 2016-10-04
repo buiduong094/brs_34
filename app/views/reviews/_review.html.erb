@@ -1,4 +1,4 @@
-<div id="review_<%= review.id %>">
+<div id="review_<%= review.id %>" class="review-index">
   <h4 class="display_inline"><strong><%= review.user.name %></strong></h4>
 
   <div class="show-rating-review">
@@ -32,7 +32,11 @@
         <%= t "books.delete_review" %>
       </button>
     <% end %>
-    <%= link_to t("reviews.comment"), "#", class: "btn btn-primary" %>
   </p>
   </br>
+  <div class = "reviews_comments_<%= review.id %>">
+    <%= render review.comments %>
+  </div>
+  <%= render "comments/comment_form",
+    comment: review.user.comments.build(review_id: review.id) %>
 </div>
