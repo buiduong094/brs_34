@@ -1,0 +1,16 @@
+<div class="center">
+  <button type="button" class="btn btn-default" id="btn_read">
+    <%= t "books.read" %>
+  </button>
+  <button type="button" class="btn btn-default" id="btn_reading">
+    <%= t "books.reading" %>
+  </button>
+  <button type="button" class="btn btn-default" id="btn_favourite">
+    <%= t "books.favourites" %>
+  </button>
+  <input type="hidden" id="book_status" value="<%= @book_status.id %>"/>
+  <input type="hidden" id="reading_status"
+    value="<%= @book_status.reading_status %>"/>
+  <input type="hidden" id="is_favourite"
+    value="<%= @book_status.is_favourite %>"/>
+</div>

@@ -16,5 +16,9 @@ class BooksController < ApplicationController
     else
       @button = t "books.update_review"
     end
+    @book_status = BookStatus.find_by book_id: @book.id, user_id: current_user.id
+    if @book_status.nil?
+      @book_status = BookStatus.new
+    end
   end
 end
