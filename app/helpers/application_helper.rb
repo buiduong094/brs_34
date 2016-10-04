@@ -12,4 +12,8 @@ module ApplicationHelper
     params[:page] ||= "1"
     1 + index + (params[:page].to_i - 1) * per_page
   end
+
+  def get_avatar_in_user user
+    user.avatar.present? ? user.avatar : Settings.users.avatar_nil
+  end
 end

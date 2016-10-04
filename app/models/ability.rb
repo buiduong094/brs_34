@@ -9,6 +9,7 @@ class Ability
       can :read, :all
       can [:create, :destroy], Request
       can [:create, :update, :destroy], Review, user_id: user.id
+      can [:create, :destroy], Comment, user_id: user.id
     end
   end
 end

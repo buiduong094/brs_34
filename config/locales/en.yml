@@ -66,6 +66,9 @@ en:
       content: "Input content your request"
     show:
       title: "Content your request"
+  comments:
+    comment: "Comment"
+    placeholer: "Type your comment"
   devise:
     registrations:
       new:

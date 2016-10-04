@@ -100,3 +100,23 @@ footer {
 .page {
   clear: both;
 }
+.review-index {
+  background: #d4e8b6;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.comments {
+  li {
+    margin-top: 2px;
+    margin-left: 20px;
+    list-style: none;
+    background: #dff1c4;
+  }
+}
+
+.new_comment {
+  background: #e1e1e1;
+  padding: 10px;
+  margin-top: 5px;
+  margin-left: 20px;
+}

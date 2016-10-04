@@ -1,0 +1,7 @@
+<%= form_for comment, method: :post do |f| %>
+  <%= f.hidden_field :review_id, value: comment.review.id %>
+  <%= f.text_area :content, class: "form-control",
+    placeholder: t("comments.placeholer") %>
+
+  <%= f.submit t("comments.comment"), class: "btn btn-primary form-control" %>
+<% end %>
