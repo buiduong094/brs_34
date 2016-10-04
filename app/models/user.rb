@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
-  has_many :marks, dependent: :destroy
+  has_many :book_status, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :requests, dependent: :destroy

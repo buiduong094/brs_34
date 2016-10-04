@@ -164,6 +164,15 @@ en:
     created_review_error: "Created review error"
     destroy_review_success: "Destroy review success"
     destroy_review_fail: "Destroy review error"
+    created_bookstatus_success: "Created bookstatus success"
+    created_bookstatus_error: "Created bookstatus error"
+    updated_bookstatus_success: "Updated bookstatus success"
+    updated_bookstatus_error: "Updated bookstatus error"
+    destroy_bookstatus_success: "Destroy bookstatus success"
+    destroy_bookstatus_fail: "Destroy bookstatus error"
+    reading: "reading"
+    read: "read"
+    favourites: "Favourites"
   models:
     book:
       validate_picture: "Should be less than 5MB."

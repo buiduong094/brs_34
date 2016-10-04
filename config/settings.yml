@@ -16,6 +16,10 @@ books:
   size: "200x200"
   size_details: "300x300"
   size_star_details: "30x30"
+  marked_book:
+    reading: 0
+    read: 1
+    favorite: true
 reivews: ["bad", "poor", "regular", "good", "gorgeous"]
 star_on: "/assets/star-on.png"
 star_off: "/assets/star-off.png"
