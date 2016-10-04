@@ -135,6 +135,7 @@ en:
       confirm: "Are you sure?"
   search: "Search"
   submit: "Submit"
+  hidden: "hidden"
   shared:
     error: "error"
     the_form_contain: "The form contains"
@@ -150,11 +151,23 @@ en:
   books:
     title: "Books"
     all: "All books"
+    add_review: "Add review"
+    update_review: "Update review"
+    edit_review: "Edit review"
+    delete_review: "Delete review"
+    updated_review_success: "Updated review success"
+    updated_review_error: "Updated review error"
+    created_review_success: "Created review success"
+    created_review_error: "Created review error"
+    destroy_review_success: "Destroy review success"
+    destroy_review_fail: "Destroy review error"
   models:
     book:
       validate_picture: "Should be less than 5MB."
       invalidate_publish_date: "Invalidate publish date"
       no_review: "No review"
+    review:
+      validate_rating: "Please selected stars!"
   application:
     general:
       date_format: "YYYY/MM/DD"

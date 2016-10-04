@@ -1,0 +1,38 @@
+<div id="review_<%= review.id %>">
+  <h4 class="display_inline"><strong><%= review.user.name %></strong></h4>
+
+  <div class="show-rating-review">
+    <%= t("reviews.rate")%>
+    <% review.rating.to_i.times do %>
+      <%= image_tag Settings.star_on %>
+    <% end %>
+  </div>
+  <% if review.content.present? %>
+    <p><%= t("reviews.content")%> <%= review.content %></p>
+  <% end %>
+  <p class="text-left display_inline">
+    <em>
+      <%= t "reviews.created_by" %>
+      <%= link_to review.user.name, "#" %>
+    </em>
+  </p>
+  <p class="text-left display_inline">
+    <em>
+      <%= t "reviews.created_at" %>
+      <%= localize_time review.created_at %>
+    </em>
+  </p>
+  <p>
+    <% if can? :update, review %>
+      <button type="button" class="btn btn-primary" data-toggle="modal"
+        data-target="#mynewreview" data-whatever="@fat">
+        <%= t"books.edit_review" %>
+      </button>
+      <button type="button" class="btn btn-danger" id="review-remove-btn">
+        <%= t "books.delete_review" %>
+      </button>
+    <% end %>
+    <%= link_to t("reviews.comment"), "#", class: "btn btn-primary" %>
+  </p>
+  </br>
+</div>
