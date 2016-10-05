@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <h1><%= t "requests.all_my_request" %></h1>
+  <div class="search-form">
+    <%= search_form_for [:admin, @q] do |f| %>
+      <div class="field">
+        <%= f.text_field :book_name_cont, class: "form-control",
+          placeholder: t("requests.search_placeholer") %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t "requests.table.index" %></th>
+          <th><%= t "requests.table.user" %></th>
+          <th><%= t "requests.table.content" %></th>
+          <th><%= t "requests.table.create_at" %></th>
+          <th><%= t "requests.table.status" %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="requests-body">
+        <% @requests.each_with_index do |request, index| %>
+          <tr>
+            <th scope="row">
+              <%= index_in_list index, Settings.requests.per_page %>
+            </th>
+            <td><%= link_to request.user.email, "#", class: "btn btn-md" %></td>
+            <td><%= request.book_name %></td>
+            <td><%= localize_time request.created_at %></td>
+            <td>
+              <span class="request_status_<%= request.id %>">
+                <%= request.status %>
+              </span>
+            </td>
+            <td>
+              <% if Request.statuses[request.status] == Request.statuses[:waitting] %>
+                <button type="button" value="<%= request.id %>"
+                  class="btn btn-primary btn_acceppt btn_acceppt_<%= request.id %>">
+                  <%= t "requests.accept" %>
+                </button>
+                <button type="button" value="<%= request.id %>"
+                  class="btn btn-danger btn_deny btn_deny_<%= request.id %>">
+                  <%= t "requests.deny" %>
+                </button>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @requests %>
+    <%= page_entries_info @requests %>
+  </div>
+</div>

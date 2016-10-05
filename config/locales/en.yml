@@ -66,6 +66,10 @@ en:
       content: "Input content your request"
     show:
       title: "Content your request"
+    accepted: "Accepted Request"
+    accept: "Accept"
+    deny: "Deny"
+    book: "Request Book"
   comments:
     comment: "Comment"
     placeholer: "Type your comment"
