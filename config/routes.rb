@@ -66,4 +66,5 @@ Rails.application.routes.draw do
   resources :book_status
   resources :users
   resources :relationships, only: [:create, :destroy]
+  resources :activities, only: [:index, :create]
 end
