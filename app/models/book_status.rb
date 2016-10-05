@@ -4,11 +4,11 @@ class BookStatus < ActiveRecord::Base
 
   enum status: [:read, :reading]
 
-  scope :favorite, -> user {
-    where user_id: user.id, is_favourite: true
+  scope :favorites, -> {
+    where is_favourite: true
   }
 
-  scope :readed, -> user, status {
-    where user_id: user.id, reading_status: status
+  scope :readed, -> status {
+    where reading_status: status
   }
 end

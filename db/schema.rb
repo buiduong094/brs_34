@@ -90,8 +90,8 @@ ActiveRecord::Schema.define(version: 20160921081749) do
     t.string   "book_name"
     t.integer  "status",     default: 0
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "requests", ["user_id"], name: "index_requests_on_user_id"

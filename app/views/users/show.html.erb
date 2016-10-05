@@ -1,0 +1,74 @@
+<% provide :title, @user.name %>
+<div class="panel panel-info">
+  <div class="profile">
+    <div class="profile_left">
+      <div class="row">
+        <div class="col-lg-7">
+          <h1><%= t "page.users.profile.my_profile", user_name: @user.name %></h1>
+          <table class="tbody_profile table">
+            <tbody>
+              <tr>
+                <td><b><%= t "admin.users.td_name" %></b></td>
+                <td><%= @user.name %></td>
+              </tr>
+              <tr>
+                <td><b><%= t "admin.users.td_email" %></b></td>
+                <td><%= @user.email %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3">
+          <aside>
+            <section>
+              <h1>
+                <%= image_tag @user.avatar, size: Settings.users.size_ava %>
+              </h1>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </div>
+    <div class="profile_right">
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="col-lg-12 favourites">
+      <br />
+      <strong><%= t "users.favourites" %></strong>
+      <%= render partial: "book_status/book_status",
+        collection: @support.favorites, as: :book_status %>
+      <% if @support.favorites.length == Settings.books.per_page %>
+        <%= link_to t("show_more"), "#", class: "btn btn-success pull-right" %>
+      <% end %>
+    </div>
+    <div class="col-lg-12 book_reads">
+      <br />
+      <strong><%= t "users.book_reads" %></strong>
+      <%= render partial: "book_status/book_status",
+        collection: @support.reads, as: :book_status %>
+      <% if @support.reads.length == Settings.books.per_page %>
+        <%= link_to t("show_more"), "#", class: "btn btn-success pull-right" %>
+      <% end %>
+    </div>
+
+    <div class="col-lg-12 book_readings">
+      <br />
+      <strong><%= t "users.book_readings" %></strong>
+      <%= render partial: "book_status/book_status",
+        collection: @support.readings, as: :book_status %>
+      <% if @support.readings.length == Settings.books.per_page %>
+        <%= link_to t("show_more"), "#", class: "btn btn-success pull-right" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <span class="pull-right">
+      <%= link_to edit_user_registration_path current_user do %>
+        <span class="glyphicon glyphicon-edit btn btn-sm btn-warning"></span>
+      <% end %>
+    </span>
+  </div>
+</div>
+<input type="hidden" class="page-scroll" value="users"/>

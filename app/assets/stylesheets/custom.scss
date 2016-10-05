@@ -120,3 +120,19 @@ footer {
   margin-top: 5px;
   margin-left: 20px;
 }
+
+.favourites {
+  border: solid pink 1px;
+  margin: 2px;
+  a {
+    margin: 20px;
+  }
+}
+
+.book_reads {
+  border: solid lightgreen 1px;
+}
+
+.book_readings {
+  border: solid lightblue 1px;
+}

@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "categories#index"
     resources :categories
+    resources :users
     resources :books
     resources :requests
   end
@@ -63,4 +64,5 @@ Rails.application.routes.draw do
   resources :reviews
   resources :comments
   resources :book_status
+  resources :users
 end
