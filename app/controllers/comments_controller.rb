@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build comment_params
     if @comment.save
+      SendEmailCommentOnReviewWorker.perform_async @comment.id
       respond_to do |format|
         format.json {
           render json: {

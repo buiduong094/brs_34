@@ -73,6 +73,10 @@ en:
   comments:
     comment: "Comment"
     placeholer: "Type your comment"
+    new_comment: "New Comment For Review"
+    new_comment_post_for: "a new comment was posted for "
+    on: "on "
+    reply: "To reply to this comment,"
   devise:
     registrations:
       new:
