@@ -1,0 +1,12 @@
+<div class="col-md-6" >
+  <strong  id="following">
+    <%= @user.following.size %>
+  </strong>
+  <%= t("views.shared.stats.title.following") %>
+</div>
+<div class="col-md-6" >
+  <strong  id="followers">
+    <%= @user.followers.size %>
+  </strong>
+  <%= t("views.shared.stats.title.followers") %>
+</div>

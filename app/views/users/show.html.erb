@@ -27,6 +27,12 @@
               </h1>
             </section>
           </aside>
+          <% unless current_user == @user %>
+            <%= render "follow_form" %>
+          <% end %>
+          <section class="stats">
+            <%= render "shared/stats" %>
+          </section>
         </div>
       </div>
     </div>

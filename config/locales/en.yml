@@ -131,6 +131,8 @@ en:
       td_name: "Name"
       td_email: "Email"
       td_delete: "Delete"
+      follow: "Follow"
+      unfollow: "Unfollow"
     books:
       table:
         id: "ID"
