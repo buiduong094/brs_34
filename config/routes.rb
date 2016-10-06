@@ -65,4 +65,5 @@ Rails.application.routes.draw do
   resources :comments
   resources :book_status
   resources :users
+  resources :relationships, only: [:create, :destroy]
 end
