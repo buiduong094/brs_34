@@ -133,6 +133,8 @@ en:
       td_delete: "Delete"
       follow: "Follow"
       unfollow: "Unfollow"
+      like: "Like"
+      unlike: "Unilke"
     books:
       table:
         id: "ID"

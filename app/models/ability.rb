@@ -12,6 +12,7 @@ class Ability
       can [:create, :destroy], Comment, user_id: user.id
       can [:create, :update, :destroy], BookStatus, user_id: user.id
       can [:edit, :update], User
+      can [:create, :destroy], Like
     end
   end
 end

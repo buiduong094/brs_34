@@ -1,10 +1,14 @@
 <h1><%= t("activities") %></h1>
-<div class="col-md-5 col-md-offset-1">
+<div class="col-md-11 col-md-offset-1">
   <% @activities.each do |activity| %>
+    <hr>
     <div class="activity">
       <b><%= activity.owner.name if activity.owner %></b>
       <%= get_activity_trackable_content activity %>
       <em><%= time_ago_in_words activity.created_at %></em>
     </div>
+    <%= div_for(activity) do %>
+      <%= render "users/like", activity: activity %>
+    <% end %>
   <% end %>
 </div>
