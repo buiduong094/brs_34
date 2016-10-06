@@ -1,3 +1,4 @@
+
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
@@ -43,11 +44,21 @@ en:
       introduce: "This is the home page"
       linkto_framgia_title: "Framgia Vietnam"
       linkto_framgia_adress: "http://recruit.framgia.vn/"
+    header:
+      all_user: "Search User"
+      book: "Book"
+      account: "Acount"
+      profile: "Profile"
+      setting: "Update"
+      logout: "Log out"
+      manage: "Manage"
+      my_request: "My Request"
     shared:
       error: "error"
       the_form_contain: "The form contains"
+  all_user: "Users"
   requests:
-    all_my_request: "All Requests"
+    all_my_request: "Requests"
     search_placeholer: "Search requests"
     table:
       content: "Content"
@@ -62,7 +73,7 @@ en:
     new:
       send: "Send my request"
       send: "Send"
-      title: "New your request"
+      title: "New Request"
       content: "Input content your request"
     show:
       title: "Content your request"
@@ -70,9 +81,15 @@ en:
     accept: "Accept"
     deny: "Deny"
     book: "Request Book"
+  users: "Users"
   comments:
     comment: "Comment"
     placeholer: "Type your comment"
+    new_comment: "New Comment For Review"
+    new_comment_post_for: "a new comment was posted for "
+    on: "on "
+    reply: "To reply to this comment,"
+  activities: "Acitivities"
   devise:
     registrations:
       new:
@@ -116,13 +133,14 @@ en:
       category_updated: "Category Updated"
       delete: "Category Deleted"
       edit_category: "Edit Category"
+      update: "Update category"
       save: "Save Changes"
       edit: "Edit"
       sure: "Are you sure?"
       remove: "Delete"
       please_login: "Please Login"
     users:
-      search_placeholer: "Search User"
+      search_placeholer: "Search by name"
       delete_confirm: "You sure?"
       destroy_success: "User has been destroy"
       destroy_error: "User has not been destroy"
@@ -133,6 +151,8 @@ en:
       td_delete: "Delete"
       follow: "Follow"
       unfollow: "Unfollow"
+      like: "Like"
+      unlike: "Unilke"
     books:
       table:
         id: "ID"
@@ -161,6 +181,7 @@ en:
   flash:
     user_requests:
       create_success: "create request success"
+      create_fail: "create request fail"
       destroy_success: "Delete request success"
       destroy_fail: "Delete request fail"
   time:
@@ -169,7 +190,7 @@ en:
       publish_date: "%d %b %Y"
   books:
     title: "Books"
-    all: "All books"
+    all: "Books"
     add_review: "Add review"
     update_review: "Update review"
     edit_review: "Edit review"
@@ -186,10 +207,9 @@ en:
     updated_bookstatus_error: "Updated bookstatus error"
     destroy_bookstatus_success: "Destroy bookstatus success"
     destroy_bookstatus_fail: "Destroy bookstatus error"
-    reading: "reading"
-    read: "read"
-    favourites: "Favourites"
-    book_readings: "Book Readings"
+    reading: "Reading"
+    read: "Read"
+    favourite: "Favourite"
   models:
     book:
       validate_picture: "Should be less than 5MB."

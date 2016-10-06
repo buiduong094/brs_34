@@ -1,5 +1,5 @@
-<% provide :title, t("user.all") %>
-<h1><%= t "user.all" %></h1>
+<% provide :title, t("all_user") %>
+<h1><%= t "all_user" %></h1>
 <div class="search-form">
   <%= search_form_for @q do |f| %>
     <div class="field">
@@ -10,28 +10,25 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <table class="table table-striped">
-      <tr>
-        <th><%= t "users.name" %></th>
-        <th><%= t "admin.users.table.email" %></th>
+    <table class="table table-hover">
+      <tr class="info">
+        <th class="text"><%= t "users.name" %></th>
+        <th class="text"><%= t "admin.users.table.email" %></th>
         <th><%= t "users.avatar" %></th>
       </tr>
       <% @users.each do |user| %>
         <tr>
-          <td><%= link_to user.name, user %></td>
-          <td><%= user.email%></td>
+          <td class="text"><%= link_to user.name, user %></td>
+          <td class="text"><%= user.email%></td>
           <td>
-            <% if user.avatar.present? %>
-              <%= link_to image_tag(user.avatar, size: Settings.users.size), user %>
-            <% else %>
-              <%= link_to image_tag(Settings.users.url, size: Settings.users.size),
-                user %>
-            <% end %>
+            <%= image_tag(get_avatar_in_user(user),
+              size: Settings.users.size) %>
           </td>
         </tr>
       <% end %>
     </table>
-    <%= paginate @users %>
-    <%= page_entries_info @users %>
+    <div class="page center">
+      <%= paginate @users %>
+    </div>
   </div>
 </div>

@@ -1,6 +1,5 @@
-<h2><%= t "requests.new.title" %></h2>
 <div class="row">
-  <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-10 col-md-offset-1 box_shadow">
     <%= form_for current_user.requests.build do |f| %>
       <%= render "shared/error_messages", object: @request %>
       <%= f.hidden_field :user_id, value: current_user.id %>
@@ -9,7 +8,7 @@
           placeholder: t("requests.new.content"), rows: 10 %>
       </div>
       <div class="actions text-center">
-        <%= f.submit t("requests.new.sent"), class: "btn btn-success" %>
+        <%= f.submit t("requests.new.send"), class: "btn btn-success form-control" %>
       </div>
     <% end %>
   </div>

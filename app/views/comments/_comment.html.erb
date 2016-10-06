@@ -2,17 +2,17 @@
   <div class="comments">
     <li id="comment-<%= comment.id %>">
       <%= link_to image_tag(get_avatar_in_user(comment.user),
-        size: Settings.admin.books.avartar_size), "#" %>
-      <span class="user"><%= link_to comment.user.name, "#" %></span>
-      <span class="content"><%= comment.content %></span>
+        size: Settings.admin.books.avartar_size), comment.user %>
+      <span class="user"><%= link_to comment.user.name, comment.user %>:</span>
+      <span class="content"><%= comment.content %></span>.
       <span class="timestamp">
-        <%= t "comments.commented" %>
         <%= time_ago_in_words comment.created_at %>
         <%= t "comments.ago" %>
       </span>
       <% if can? :destroy, comment %>
         <%= link_to t("requests.table.delete"), comment_path(comment),
-          method: :delete, data: {confirm: t("requests.table.confirm")} %>
+          method: :delete, data: {confirm: t("requests.table.confirm"),
+            remote: true} %>
       <% end %>
     </li>
   </div>

@@ -1,0 +1,8 @@
+<%= t("activities.myactivity") %>
+<% @activities.each do |activity| %>
+  <div class="activity">
+    <b><%= activity.owner.name if activity.owner %></b>
+    <%= get_activity_trackable_content activity %>
+    <em><%= time_ago_in_words activity.created_at %></em>
+  </div>
+<% end %>

@@ -1,6 +1,11 @@
 class BookStatusController < ApplicationController
   load_and_authorize_resource
 
+  def index
+    @book_status = current_user.book_status.includes(:book)
+      .page(params[:page]).per Settings.per_page
+  end
+
   def create
     @book_status = current_user.book_status.build book_status_params
     if @book_status.save

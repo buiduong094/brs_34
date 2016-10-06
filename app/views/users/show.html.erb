@@ -23,7 +23,8 @@
           <aside>
             <section>
               <h1>
-                <%= image_tag @user.avatar, size: Settings.users.size_ava %>
+                <%= image_tag(get_avatar_in_user(@user),
+                  size: Settings.users.size_ava) %>
               </h1>
             </section>
           </aside>
@@ -40,41 +41,33 @@
     </div>
   </div>
   <div class="panel-body">
-    <div class="col-lg-12 favourites">
-      <br />
-      <strong><%= t "users.favourites" %></strong>
-      <%= render partial: "book_status/book_status",
-        collection: @support.favorites, as: :book_status %>
-      <% if @support.favorites.length == Settings.books.per_page %>
-        <%= link_to t("show_more"), "#", class: "btn btn-success pull-right" %>
-      <% end %>
-    </div>
-    <div class="col-lg-12 book_reads">
-      <br />
-      <strong><%= t "users.book_reads" %></strong>
-      <%= render partial: "book_status/book_status",
-        collection: @support.reads, as: :book_status %>
-      <% if @support.reads.length == Settings.books.per_page %>
-        <%= link_to t("show_more"), "#", class: "btn btn-success pull-right" %>
-      <% end %>
-    </div>
-
-    <div class="col-lg-12 book_readings">
-      <br />
-      <strong><%= t "users.book_readings" %></strong>
-      <%= render partial: "book_status/book_status",
-        collection: @support.readings, as: :book_status %>
-      <% if @support.readings.length == Settings.books.per_page %>
-        <%= link_to t("show_more"), "#", class: "btn btn-success pull-right" %>
-      <% end %>
-    </div>
-  </div>
-  <div class="panel-footer">
-    <span class="pull-right">
-      <%= link_to edit_user_registration_path current_user do %>
-        <span class="glyphicon glyphicon-edit btn btn-sm btn-warning"></span>
-      <% end %>
-    </span>
+    <% if @support.favorites.any? %>
+      <div class="col-lg-12 favourites">
+        <br />
+        <div><strong><%= t "books.favourite" %>:</strong></div>
+        <br />
+        <%= render partial: "book_status/book_status",
+          collection: @support.favorites, as: :book_status %>
+      </div>
+    <% end %>
+    <% if @support.reads.any? %>
+      <div class="col-lg-12 book_reads">
+        <br />
+        <div><strong><%= t "books.read" %>:</strong></div>
+        <br />
+        <%= render partial: "book_status/book_status",
+          collection: @support.reads, as: :book_status %>
+      </div>
+    <% end %>
+    <% if @support.readings.any? %>
+      <div class="col-lg-12 book_readings">
+        <br />
+        <div><strong><%= t "books.reading" %>:</strong></div>
+        <br />
+        <%= render partial: "book_status/book_status",
+          collection: @support.readings, as: :book_status %>
+      </div>
+    <% end %>
   </div>
 </div>
 <input type="hidden" class="page-scroll" value="users"/>
