@@ -16,4 +16,9 @@ module ApplicationHelper
   def get_avatar_in_user user
     user.avatar.present? ? user.avatar : Settings.users.avatar_nil
   end
+
+  def get_activity_trackable_content activity
+    trackable_type = activity.trackable_type
+    @trackable = Settings.activity.trackable[trackable_type]
+  end
 end

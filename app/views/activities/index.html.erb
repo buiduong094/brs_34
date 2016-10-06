@@ -1,0 +1,10 @@
+<h1><%= t("activities") %></h1>
+<div class="col-md-5 col-md-offset-1">
+  <% @activities.each do |activity| %>
+    <div class="activity">
+      <b><%= activity.owner.name if activity.owner %></b>
+      <%= get_activity_trackable_content activity %>
+      <em><%= time_ago_in_words activity.created_at %></em>
+    </div>
+  <% end %>
+</div>
