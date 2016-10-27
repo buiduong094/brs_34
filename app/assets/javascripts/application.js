@@ -18,6 +18,11 @@
 //= require social-share-button
 
 $(document).on('ready page:load', function(){
+  $('.sumit_form_comment').on('click', 'input[type=submit]',function(){
+    $('.sumit_form_comment').not(this).attr('disabled','disabled');
+    content_review = $(this).find('textarea#comment_content').val();
+    console.log('adad'+content_review);
+  });
   var load_image_star= function(length) {
     $.each($('.star-review'), function(index, key){
       if (index < length){
@@ -112,6 +117,38 @@ $(document).on('ready page:load', function(){
         }
         $('#star_rewview_book').text(response.star_rewview_book);
         alert(response.status);
+
+        $('#review-remove-btn').on('click', function(event){
+        var result = confirm("Want to delete?");
+        if (result) {
+          var id = $('#review_id').val();
+          $.ajax({
+            url: '/reviews/'+id,
+            method: 'DELETE',
+            data: {},
+            dataType: 'JSON',
+            success: function(response){
+              $('#review_'+id).fadeOut(500, function(){
+                $(this).remove();
+              });
+              $('.mynewreview').text('Add review');
+              $('#review-btn').val('Add review');
+              if(response.star_rewview_book){
+                $('#star_rewview_book').text(response.star_rewview_book);
+              }else{
+                $('.star_rewview_book').addClass('hidden');
+              }
+              alert(response.status);
+              load_image_star(0);
+              $('#review_rating').val('');
+              $('#review_content').val('');
+            },
+            error: function(){
+              alert("Error!");
+            }
+          });
+        }
+      });
       },
       error: function(){
         alert("Error! Please check your review and retry!");

@@ -1,7 +1,7 @@
 <div class="container-fluid">
+  <h1><%= t "requests.all_my_request" %></h1>
   <%= link_to t("requests.table.add_request"), new_request_path,
     class: "btn btn-md btn-primary pull-right" %>
-  <h1><%= t "requests.all_my_request" %></h1>
   <div class="search-form">
     <%= search_form_for @q do |f| %>
       <div class="field">
@@ -10,14 +10,14 @@
       </div>
     <% end %>
   </div>
-  <div class="row">
-    <table class="table table-striped">
+  <div>
+    <table class="table table-hover">
       <thead>
-        <tr>
-          <th><%= t "requests.table.index" %></th>
-          <th><%= t "requests.table.content" %></th>
-          <th><%= t "requests.table.create_at" %></th>
-          <th><%= t "requests.table.status" %></th>
+        <tr class="info">
+          <th class="index"><%= t "requests.table.index" %></th>
+          <th class="text"><%= t "requests.table.content" %></th>
+          <th class="date"><%= t "requests.table.create_at" %></th>
+          <th class="number"><%= t "requests.table.status" %></th>
           <th></th>
         </tr>
       </thead>
@@ -25,7 +25,8 @@
         <%= render "request" %>
       </tbody>
     </table>
-    <%= paginate @requests %>
-    <%= page_entries_info @requests %>
+    <div class="page center">
+      <%= paginate @requests %>
+    </div>
   </div>
 </div>

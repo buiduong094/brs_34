@@ -1,0 +1,12 @@
+<%= t "comments.new_comment" %>
+<p>
+  <%= t "comment.new_comment_post_for " %> <%= @comment.user.email %>
+  <%= t "comment.on " %> <%= @comment.review.book.title %>
+</p>
+=============================
+<p><%= @comment.content %></p>
+=============================
+<%= t "comments.reply" %>
+<p>
+  <%= link_to @comment.review.book.title, @comment.review.book %>
+</p>

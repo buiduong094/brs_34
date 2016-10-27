@@ -8,33 +8,36 @@
       </div>
     <% end %>
   </div>
-  <div class="row">
-    <table class="table table-striped">
+  <br />
+  <div>
+    <table class="table table-hover">
       <thead>
-        <tr>
-          <th><%= t "requests.table.index" %></th>
-          <th><%= t "requests.table.user" %></th>
-          <th><%= t "requests.table.content" %></th>
-          <th><%= t "requests.table.create_at" %></th>
-          <th><%= t "requests.table.status" %></th>
+        <tr class="info">
+          <th class="index"><%= t "requests.table.index" %></th>
+          <th class="text"><%= t "requests.table.user" %></th>
+          <th class="text"><%= t "requests.table.content" %></th>
+          <th class="date"><%= t "requests.table.create_at" %></th>
+          <th class="date"><%= t "requests.table.status" %></th>
           <th></th>
         </tr>
       </thead>
       <tbody id="requests-body">
         <% @requests.each_with_index do |request, index| %>
           <tr>
-            <th scope="row">
+            <th class="index">
               <%= index_in_list index, Settings.requests.per_page %>
             </th>
-            <td><%= link_to request.user.email, "#", class: "btn btn-md" %></td>
-            <td><%= request.book_name %></td>
-            <td><%= localize_time request.created_at %></td>
-            <td>
+            <td class="text">
+              <%= link_to request.user.email, request.user, class: "btn btn-md" %>
+            </td>
+            <td class="text"><%= request.book_name %></td>
+            <td class="date"><%= localize_time request.created_at %></td>
+            <td class="date">
               <span class="request_status_<%= request.id %>">
                 <%= request.status %>
               </span>
             </td>
-            <td>
+            <td class="date">
               <% if Request.statuses[request.status] == Request.statuses[:waitting] %>
                 <button type="button" value="<%= request.id %>"
                   class="btn btn-primary btn_acceppt btn_acceppt_<%= request.id %>">
@@ -50,7 +53,8 @@
         <% end %>
       </tbody>
     </table>
-    <%= paginate @requests %>
-    <%= page_entries_info @requests %>
+    <div class="page center">
+      <%= paginate @requests %>
+    </div>
   </div>
 </div>

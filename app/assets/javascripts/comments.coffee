@@ -16,7 +16,9 @@ $(document).on 'change', ->
       dataType: 'JSON'
       success: (result) ->
         if result.status == "created"
-          $('.reviews_comments_'+review_id).append result.content
+          review = $('.reviews_comments_'+review_id)
+          review.append result.content
+          review.animate({ scrollTop: review.prop("scrollHeight")}, 1000);
         else
           alert result.content
         return

@@ -1,10 +1,24 @@
 <h1><%= t("activities") %></h1>
-<div class="col-md-5 col-md-offset-1">
-  <% @activities.each do |activity| %>
-    <div class="activity">
-      <b><%= activity.owner.name if activity.owner %></b>
-      <%= get_activity_trackable_content activity %>
-      <em><%= time_ago_in_words activity.created_at %></em>
-    </div>
-  <% end %>
+<div class="col-md-11 col-md-offset-1">
+  <table class="table table-hover activity">
+    <thead>
+      <% @activities.each do |activity| %>
+        <tr>
+          <td>
+            <%= activity.owner.name if activity.owner %>:
+            <%= get_activity_trackable_content activity %>
+          </td>
+          <td><%= time_ago_in_words activity.created_at %></td>
+          <td>
+            <%= div_for(activity) do %>
+              <%= render "users/like", activity: activity %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </thead>
+  </table>
+</div>
+<div class="page center">
+  <%= paginate @activities %>
 </div>

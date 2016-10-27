@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build comment_params
     if @comment.save
+      SendEmailCommentOnReviewWorker.perform_async @comment.id
       respond_to do |format|
         format.json {
           render json: {
@@ -13,10 +14,16 @@ class CommentsController < ApplicationController
         }}
       end
     else
-      respond_to do |format|
-        format.json {render json: {
-          status: :fail, content: @comment.errors.messages[:content]
-        }}
+      begin
+        respond_to do |format|
+          format.json {
+            render json: {
+              status: :fail, content: @comment.errors.messages[:content]
+          }}
+        end
+      rescue => ex
+        flash[:danger] = t "flash.user_requests.create_fail"
+        redirect_to :back
       end
     end
   end
@@ -24,10 +31,12 @@ class CommentsController < ApplicationController
   def destroy
     if @comment.destroy
       flash[:success] = t "flash.user_requests.destroy_success"
+      respond_to do |format|
+        format.js
+      end
     else
       flash[:error] = t "flash.user_requests.destroy_fail"
     end
-    redirect_to :back
   end
 
   private

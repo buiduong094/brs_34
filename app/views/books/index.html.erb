@@ -1,4 +1,4 @@
-<h1><%= t ".title" %></h1>
+<h1><%= t "books.all" %></h1>
 <%= search_form_for @search do |f| %>
   <div class="field1">
     <%= f.text_field :title_cont, class: "form-control",
@@ -12,12 +12,11 @@
     <div class ="col-md-3">
       <%= link_to image_tag(get_picture(book), size: Settings.books.size),
         book %>
-      <h4><%= link_to book.title, book_path(book) %></h4>
-      <p><%= book.author %></p>
+      <h4><b><%= t "Title" %>:</b> <%= link_to book.title, book_path(book) %></h4>
+      <p><b><%= t "Author" %>:</b> <%= book.author %></p>
     </div>
   <% end %>
 </div>
-<div class="page">
+<div class="page center">
   <%= paginate @books %>
-  <%= page_entries_info @books %>
 </div>

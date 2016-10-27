@@ -1,42 +1,49 @@
 <div id="review_<%= review.id %>" class="review-index">
-  <h4 class="display_inline"><strong><%= review.user.name %></strong></h4>
+  <div class="avatar_review">
+    <%= link_to image_tag(get_avatar_in_user(review.user),
+      size: Settings.admin.books.size_avar), review.user %>
+  </div>
+  <div>
+    <h4 class="display_inline"><strong><%= review.user.name %></strong></h4>
 
-  <div class="show-rating-review">
-    <%= t("reviews.rate")%>
-    <% review.rating.to_i.times do %>
-      <%= image_tag Settings.star_on %>
+    <div class="show-rating-review">
+      <%= t("reviews.rate")%>
+      <% review.rating.to_i.times do %>
+        <%= image_tag Settings.star_on %>
+      <% end %>
+    </div>
+    <% if review.content.present? %>
+      <p><%= t("reviews.content")%>: <%= review.content %></p>
     <% end %>
+    <p class="text-left display_inline">
+      <em>
+        <%= t "reviews.created_by" %>
+        <%= link_to review.user.name, review.user %>
+      </em>
+    </p>
+    <p class="text-left display_inline">
+      <em>
+        <%= t "reviews.created_at" %>
+        <%= localize_time review.created_at %>
+      </em>
+    </p>
+    <p>
+      <% if can? :update, review %>
+        <button type="button" class="btn btn-primary" data-toggle="modal"
+          data-target="#mynewreview" data-whatever="@fat">
+          <%= t"books.edit_review" %>
+        </button>
+        <button type="button" class="btn btn-danger" id="review-remove-btn">
+          <%= t "books.delete_review" %>
+        </button>
+      <% end %>
+    </p>
   </div>
-  <% if review.content.present? %>
-    <p><%= t("reviews.content")%> <%= review.content %></p>
-  <% end %>
-  <p class="text-left display_inline">
-    <em>
-      <%= t "reviews.created_by" %>
-      <%= link_to review.user.name, "#" %>
-    </em>
-  </p>
-  <p class="text-left display_inline">
-    <em>
-      <%= t "reviews.created_at" %>
-      <%= localize_time review.created_at %>
-    </em>
-  </p>
-  <p>
-    <% if can? :update, review %>
-      <button type="button" class="btn btn-primary" data-toggle="modal"
-        data-target="#mynewreview" data-whatever="@fat">
-        <%= t"books.edit_review" %>
-      </button>
-      <button type="button" class="btn btn-danger" id="review-remove-btn">
-        <%= t "books.delete_review" %>
-      </button>
-    <% end %>
-  </p>
   </br>
-  <div class = "reviews_comments_<%= review.id %>">
-    <%= render review.comments %>
+  <div class = "reviews_comments_<%= review.id %><%= " reviews_comments" if review.comments.size > 0 %>">
+      <%= render review.comments %>
   </div>
+  <br />
   <%= render "comments/comment_form",
     comment: review.user.comments.build(review_id: review.id) %>
 </div>

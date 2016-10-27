@@ -1,15 +1,18 @@
-per_page: 10
+per_page: 8
 requests:
-  per_page: 3
+  per_page: 10
 admin:
   books:
-    per_page: 2
+    per_page: 10
     size: "100x100"
+    size_avar: "120x120"
     url: "/assets/images_nil.jpeg"
     pic_size: 5
     round_rate_average: 2
     image_size: 5000000
     avartar_size: "50x50"
+  users:
+    size: "30x30"
 users:
   avatar_nil: "/assets/avartar_nil.jpeg"
   size: "50x50"
@@ -17,7 +20,7 @@ users:
   size_book: "100x100"
 books:
   size: "200x200"
-  size_details: "300x300"
+  size_details: "280x350"
   size_star_details: "30x30"
   marked_book:
     reading: 0

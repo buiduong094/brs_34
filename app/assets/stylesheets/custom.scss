@@ -12,6 +12,43 @@ body {
   padding-top: 60px;
 }
 
+.box_shadow {
+  box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+  background: rgba(0, 57, 128, 0.28);
+  padding: 50px;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
+  background-color: #31a690 !important;
+}
+.navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #31a690 !important;
+}
+
+#error_explanation {
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #ffe6e6;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+.navbar-inverse {
+  border-color: #22cdbd;
+}
 section {
   overflow: auto;
 }
@@ -131,17 +168,75 @@ footer {
 
 .book_reads {
   border: solid lightgreen 1px;
+  margin: 2px;
+  a {
+    margin: 20px;
+  }
 }
 
 .book_readings {
   border: solid lightblue 1px;
+  margin: 2px;
+  a {
+    margin: 20px;
+  }
+}
+
+.footer {
+  clear: both;
+}
+
+.container-fluid {
+  a {
+    margin-bottom: 20px;
+  }
 }
 
 .activity {
   margin: 10px;
 }
 
-.footer {
-  clear: both;
-  margin-top: 100px;
+.activity {
+  margin: 10px;
+}
+
+.remove_link_danger {
+  color: red;
+}
+
+.number {
+  text-align: right;
+}
+
+.date {
+  text-align: center;
+}
+
+.text {
+  text-align: left;
+}
+
+.index {
+  text-align: center;
+}
+
+.profile_left {
+  .row:first-child {
+    padding-left: 35px;
+  }
+}
+
+.reviews_comments {
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.timestamp {
+  color: $gray-light;
+  font-size: 8pt;
+}
+
+.avatar_review {
+  float: left;
+  margin-right: 10px;
 }

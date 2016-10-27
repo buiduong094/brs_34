@@ -21,6 +21,14 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, alert: exception.message
   end
 
+  def after_sign_in_path_for(resource)
+    if current_user.admin?
+      admin_requests_path
+    else
+      books_path
+    end
+  end
+
   private
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit :sign_up do |user_params|

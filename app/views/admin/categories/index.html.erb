@@ -1,8 +1,8 @@
 <% provide :title, t("admin.categories.all") %>
-<div class="title">
+<div class="title container-fluid">
+  <h1><%= t "admin.categories.all" %></h1>
   <%= link_to t("admin.categories.add_more_category"), new_admin_category_path,
     class: "btn btn-md btn-primary pull-right" %>
-  <h1><%= t "admin.categories.all" %></h1>
 </div>
 <div class="search-form">
   <%= search_form_for [:admin, @q] do |f| %>
@@ -12,27 +12,36 @@
     </div>
   <% end %>
 </div>
-<table class="table table-striped">
-  <tr>
-    <th><%= t "admin.categories.category_name" %></th>
-    <th><%= t "admin.categories.books" %></th>
-    <th></th><th></th>
+<table class="table table-hover">
+  <tr class="info">
+    <th class="center"><%= t "admin.books.table.index" %></th>
+    <th class="text"><%= t "admin.categories.category_name" %></th>
+    <th class="center"><%= t "admin.categories.books" %></th>
+    <th class="center"><%= t("admin.categories.edit") %></th>
+    <th class="center"><%= t("admin.categories.remove") %></th>
   </tr>
-  <% @categories.each do |category| %>
+  <% @categories.each_with_index do |category, index| %>
     <tr>
+      <th class="center">
+        <%= index_in_list index, Settings.per_page %>
+      </th>
       <td><%= category.name %></td>
-      <td><%= category.books.length %></td>
-      <td>
-        <%= link_to t("admin.categories.edit"), edit_admin_category_path(category),
-          class: "btn btn-sm btn-info" %>
+      <td class="center"><%= category.books.length %></td>
+      <td class="center">
+        <%= link_to "", edit_admin_category_path(category),
+          class: "glyphicon glyphicon-edit" %>
       </td>
-      <td>
-        <%= link_to t("admin.categories.remove"), admin_category_path(category),
-          method: :delete, data: {confirm: t("admin.categories.sure")},
-          class: "btn btn-sm btn-danger" %>
+      <td class="center">
+        <% if category.books.length == 0 %>
+          <%= link_to "",
+            admin_category_path(category), method: :delete,
+            data: {confirm: t("admin.categories.sure")},
+            class: "glyphicon glyphicon-remove text-danger" %>
+        <% end %>
       </td>
     </tr>
   <% end %>
 </table>
-<%= paginate @categories %>
-<%= page_entries_info @categories %>
+<div class="page center">
+  <%= paginate @categories %>
+</div>

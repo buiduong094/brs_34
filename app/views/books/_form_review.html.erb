@@ -9,7 +9,7 @@
       </div>
       <div id ="mynewreview1">
       <%= simple_form_for @review do |f| %>
-        <div>
+        <div class="modal-body">
           <%= f.label :rating %>
           <% rate_size = @review.rating.to_i %>
           <% rate_size.times do |n| %>
